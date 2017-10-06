@@ -1,0 +1,12 @@
+<html>
+<body>
+	{% if resultcount != 0 %}
+	<h3>Hello, {{name}}! Here are {{resultcount}} results for your search about {{term}}:</h3><br>
+	{%for each in results%}
+	<b>{{each['trackName']}}</b><br>
+	{{each['primaryGenreName']}}, {{each['kind']}}<br><br>
+	{%endfor%}
+	{%endif%}
+	{% if resultcount == 0 %}
+	<h3>I'm sorry, no results were found for your search</h3>
+	{%endif%}
